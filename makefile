@@ -26,10 +26,11 @@ LIBS=-lm -lcv -lhighgui -lcvaux -lgsl -lgslcblas -ljpeg
 # -lgslcblas:
 # -ljpeg:
 
-OPENCV_HOME=/home/john/OpenCV-2.1.0
+OPENCV_HOME=/opt/local
 
 INCL=\
     -I$(OPENCV_HOME)/include/opencv\
+    -I$(OPENCV_HOME)/include \
     -I../gsl\
     -I../gsl/gsl\
     -I../image\
@@ -39,7 +40,7 @@ INCL=\
     -I../stasm\
     -I../tasm
 
-CFLAGS=-O3 -Wall -pedantic $(INCL)
+CFLAGS=-O3 -Wall $(INCL)
 LFLAGS=$(CFLAGS)
 CC=g++
 LINK=g++
